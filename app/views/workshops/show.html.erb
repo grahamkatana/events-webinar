@@ -1,0 +1,76 @@
+<div class="row">
+    <div class="col-lg-7 mt-2">
+        <div class="card shadow mb-3 mt-2">
+            <div class="card-body">
+                <h4 class="card-title">
+                    <%=@webinar.name%>, <%=@webinar.daily_hours%>
+                </h4>
+    
+                <div class="row mt-3">
+                    <div class="col-lg-7">
+                        <h4><span class="badge bg-gray text-dark">From <%=@webinar.start_date%> To <%=@webinar.end_date%>
+                                        </span></h4>
+                        <h4><span class="badge bg-dark text-white">Daily from <%=@webinar.start_time%> To
+                                    <%=@webinar.end_time%>
+                            </span></h4>
+                    </div>
+    
+                    <div class="col-lg-5">
+                        <h4>Total spots: <span class="badge bg-danger"><%=@webinar.total_spots%></span>
+                        </h4>
+                        <h4>Remaining spots: <span class="badge bg-warning"><%=@webinar.remaining_spots%></span>
+                        </h4>
+                        <h4>Registration fee:<span class="badge bg-gray text-dark">R <%=@webinar.registration_fee%>0</span>
+                        </h4>
+    
+                    </div>
+                </div>
+                <p class="lead">
+                    <%=@webinar.description%>
+                </p>
+    
+                <%= link_to 'Back to Webinars' , workshops_path,class:"btn btn-outline-primary btn-block"%>
+            </div>
+        </div>
+    </div>
+    <div class="col-lg-5 mt-2">
+        <div class="card shadow mb-3 mt-2">
+            <div class="card-body">
+                <h4 class="card-title mb-3">
+                    Reserve your sit
+                </h4>
+
+                <%= form_with url:"#",data:{turbo:false} do |form|%>
+                <%= form.hidden_field :workshop_id, value:@webinar.id%>
+
+                <div class="form-group">
+                <%=form.label :full_name, class:"mb-2 mt-2"%>
+                <%=form.text_field :full_name, class:"form-control",required:true,placeholder:"Full name"%>
+                </div>
+
+                 <div class="form-group">
+                <%=form.label :email, class:"mb-2 mt-2"%>
+                <%=form.text_field :email, class:"form-control",required:true,placeholder:"Email",type:"email"%>
+                </div>
+
+                 <div class="form-group">
+                <%=form.label :contact_number, class:"mb-2 mt-2"%>
+                <%=form.text_field :contact_number, class:"form-control",required:true,placeholder:"Phone",type:"tel"%>
+                </div>
+
+                 <div class="form-group">
+                <%=form.label :total_number_of_tickets, class:"mb-2 mt-2"%>
+                <%=form.number_field :no_of_tickets, class:"form-control",required:true,placeholder:"No of tickets",type:"number",min:1,max:@webinar.remaining_spots,value:1%>
+                </div>
+
+                <h4 class="mt-4 mb-3">Card Details</h4>
+                <hr>
+
+
+
+                <%end%>
+            </div>
+    
+        </div>
+    </div>
+</div>
