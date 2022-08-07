@@ -73,3 +73,5 @@ group :test do
   gem "webdrivers"
 end
 
+gem 'stripe', '~> 7.0'
+
