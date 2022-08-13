@@ -1,1 +1,4 @@
-<h1>Landing page</h1>
+<div class="col-lg-12">
+<%=render 'partials/webinars', webinars:@upcoming_workshops,section_title:"Upcoming webinars"%>
+<%=render 'partials/webinars', webinars:@past_workshops,section_title:"Past webinars"%>
+</div>

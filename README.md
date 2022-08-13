@@ -1,6 +1,11 @@
 # README
 ![Screenshot](Capture.PNG)
 ![Screenshot](Capture2.PNG)
+![Screenshot](Capture3.PNG)
+![Screenshot](Capture4.PNG)
+![Screenshot](Capture5.PNG)
+![Screenshot](Capture6.PNG)
+![Screenshot](Capture7.PNG)
 
 This README would normally document whatever steps are necessary to get the
 application up and running.

@@ -1,6 +1,6 @@
 class WorkshopsController < ApplicationController
     def index
-        @webinars = Workshop.all
+        @webinars = Workshop.upcoming_workshops
     end
 
     def show

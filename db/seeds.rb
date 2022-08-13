@@ -7,6 +7,8 @@
 #   Character.create(name: "Luke", movie: movies.first)
 
 puts "Seeding database................"
+
+
 webinars = Workshop.create([
     {
         name:"React Native Beginners",
@@ -62,6 +64,17 @@ webinars = Workshop.create([
         total_spots:100,
         remaining_spots:100,
         registration_fee:2500.00
+    },
+    {
+        name:"Past Event",
+        description:"A hands on webinar on developing mobile applications",
+        start_date:Date.today - 12.days,
+        end_date:Date.today - 2.days,
+        start_time:"13:00 PM",
+        end_time:"16:00 PM",
+        total_spots:300,
+        remaining_spots:300,
+        registration_fee:1000.00
     }
 ])
 

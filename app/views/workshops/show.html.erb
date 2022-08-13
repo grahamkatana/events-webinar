@@ -1,3 +1,4 @@
+<%if @webinar.is_upcoming_workshop?%>
 <div class="row">
     <div class="col-lg-7 mt-2">
         <div class="card shadow mb-3 mt-2">
@@ -117,3 +118,9 @@
         </div>
     </div>
 </div>
+<%else%>
+<div class="container text-center">
+<p><h4>The event passed</h4></p>
+</div>
+
+<%end%>
