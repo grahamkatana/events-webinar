@@ -27,6 +27,12 @@ class BookingsController < ApplicationController
     
     end
 
+    def booking_details
+        @booking = Booking.find(params[:id])
+        
+
+    end
+
     private
     def customer_params
         params.permit(:full_name, :contact_number, :email)

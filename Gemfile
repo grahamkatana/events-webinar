@@ -74,4 +74,5 @@ group :test do
 end
 
 gem 'stripe', '~> 7.0'
+gem 'rqrcode', '~> 2.1', '>= 2.1.2'
 

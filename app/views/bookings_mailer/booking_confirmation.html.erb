@@ -12,31 +12,7 @@
           <%=@workshop.name%> has been confirmed. Please find the booking details below.
         </strong>
       </p>
-      <table class="table table-bordered">
-        <tr>
-          <td>Number of tickets</td>
-          <td>
-            <%=@booking.no_of_tickets%>
-          </td>
-        </tr>
-        <tr>
-          <td>Amount paid</td>
-          <td>
-            <%=@booking.amount%>
-          </td>
-        </tr>
-      </table>
-
-      <hr>
-      <h4><span class="badge bg-gray text-dark">From <%=@workshop.start_date%> To
-            <%=@workshop.end_date%>
-        </span></h4>
-      <h4><span class="badge bg-dark text-white">Daily from <%=@workshop.start_time%> To
-            <%=@workshop.end_time%>
-        </span></h4>
-
+      <%=@svg.html_safe%>
     </div>
-
-
   </div>
 </div>
