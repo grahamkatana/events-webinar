@@ -1,0 +1,42 @@
+<div class="col-lg-10 mx-auto">
+  <div class="card shadow">
+    <div class="card-header">
+      <h4 class="card-title">Event Confirmation</h4>
+    </div>
+
+    <div class="card-body">
+      <h1>Your spot has been reserved, <%= @customer.full_name%>
+      </h1>
+      <p class="lead">
+        Your booking for <strong>
+          <%=@workshop.name%> has been confirmed. Please find the booking details below.
+        </strong>
+      </p>
+      <table class="table table-bordered">
+        <tr>
+          <td>Number of tickets</td>
+          <td>
+            <%=@booking.no_of_tickets%>
+          </td>
+        </tr>
+        <tr>
+          <td>Amount paid</td>
+          <td>
+            <%=@booking.amount%>
+          </td>
+        </tr>
+      </table>
+
+      <hr>
+      <h4><span class="badge bg-gray text-dark">From <%=@workshop.start_date%> To
+            <%=@workshop.end_date%>
+        </span></h4>
+      <h4><span class="badge bg-dark text-white">Daily from <%=@workshop.start_time%> To
+            <%=@workshop.end_time%>
+        </span></h4>
+
+    </div>
+
+
+  </div>
+</div>

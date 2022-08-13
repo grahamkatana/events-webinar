@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
             no_of_tickets:params[:no_of_tickets].to_i,
             amount:@amount_to_be_paid
         })
+        BookingsMailer.booking_confirmation(@booking).deliver_now
 
         redirect_to workshop_path(@workshop), notice:"Your spots have been reserved"
         rescue Stripe::StripeError=>error
