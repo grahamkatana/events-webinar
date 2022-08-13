@@ -16,7 +16,7 @@ module Eventsbooking
     # These settings can be overridden in specific environments using the files
     # in config/environments, which are processed later.
     #
-    # config.time_zone = "Central Time (US & Canada)"
-    # config.eager_load_paths << Rails.root.join("app/services")
+    config.time_zone = "Pretoria"
+    config.eager_load_paths << Rails.root.join("app/services")
   end
 end

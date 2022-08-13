@@ -14,7 +14,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_05_204603) do
   create_table "bookings", force: :cascade do |t|
     t.integer "no_of_tickets"
     t.float "amount"
-    t.string "transaction_id"
+    t.string "stripe_transaction_id"
     t.integer "customer_id", null: false
     t.integer "workshop_id", null: false
     t.datetime "created_at", null: false
@@ -27,6 +27,7 @@ ActiveRecord::Schema[7.0].define(version: 2022_08_05_204603) do
     t.string "full_name"
     t.string "email"
     t.string "contact_number"
+    t.string "customer_stripe_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end

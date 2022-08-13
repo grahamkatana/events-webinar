@@ -3,7 +3,7 @@ class CreateBookings < ActiveRecord::Migration[7.0]
     create_table :bookings do |t|
       t.integer :no_of_tickets
       t.float :amount
-      t.string :transaction_id
+      t.string :stripe_transaction_id
       t.references :customer, null: false, foreign_key: true
       t.references :workshop, null: false, foreign_key: true
 

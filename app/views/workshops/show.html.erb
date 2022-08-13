@@ -5,31 +5,37 @@
                 <h4 class="card-title">
                     <%=@webinar.name%>, <%=@webinar.daily_hours%>
                 </h4>
-    
+
                 <div class="row mt-3">
                     <div class="col-lg-7">
-                        <h4><span class="badge bg-gray text-dark">From <%=@webinar.start_date%> To <%=@webinar.end_date%>
-                                        </span></h4>
+                        <h4><span class="badge bg-gray text-dark">From <%=@webinar.start_date%> To
+                                    <%=@webinar.end_date%>
+                            </span></h4>
                         <h4><span class="badge bg-dark text-white">Daily from <%=@webinar.start_time%> To
                                     <%=@webinar.end_time%>
                             </span></h4>
                     </div>
-    
+
                     <div class="col-lg-5">
-                        <h4>Total spots: <span class="badge bg-danger"><%=@webinar.total_spots%></span>
+                        <h4>Total spots: <span class="badge bg-danger">
+                                <%=@webinar.total_spots%>
+                            </span>
                         </h4>
-                        <h4>Remaining spots: <span class="badge bg-warning"><%=@webinar.remaining_spots%></span>
+                        <h4>Remaining spots: <span class="badge bg-warning">
+                                <%=@webinar.remaining_spots%>
+                            </span>
                         </h4>
-                        <h4>Registration fee:<span class="badge bg-gray text-dark">R <%=@webinar.registration_fee%>0</span>
+                        <h4>Registration fee:<span class="badge bg-gray text-dark">R <%=@webinar.registration_fee%>
+                                    0</span>
                         </h4>
-    
+
                     </div>
                 </div>
                 <p class="lead">
                     <%=@webinar.description%>
                 </p>
-    
-                <%= link_to 'Back to Webinars' , workshops_path,class:"btn btn-outline-primary btn-block"%>
+
+                <%= link_to 'Back to Webinars' , workshops_path,class:"btn btn-outline-dark btn-block"%>
             </div>
         </div>
     </div>
@@ -40,37 +46,74 @@
                     Reserve your sit
                 </h4>
 
-                <%= form_with url:"#",data:{turbo:false} do |form|%>
-                <%= form.hidden_field :workshop_id, value:@webinar.id%>
+                <%= form_with url: :bookings,data:{turbo:false} do |form|%>
+                    <%= form.hidden_field :workshop_id, value:@webinar.id%>
 
-                <div class="form-group">
-                <%=form.label :full_name, class:"mb-2 mt-2"%>
-                <%=form.text_field :full_name, class:"form-control",required:true,placeholder:"Full name"%>
-                </div>
+                        <div class="form-group">
+                            <%=form.label :full_name, class:"mb-2 mt-2"%>
+                                <%=form.text_field :full_name, class:"form-control",required:true,placeholder:"Full name"%>
+                        </div>
 
-                 <div class="form-group">
-                <%=form.label :email, class:"mb-2 mt-2"%>
-                <%=form.text_field :email, class:"form-control",required:true,placeholder:"Email",type:"email"%>
-                </div>
+                        <div class="form-group">
+                            <%=form.label :email, class:"mb-2 mt-2"%>
+                                <%=form.text_field :email,
+                                    class:"form-control",required:true,placeholder:"Email",type:"email"%>
+                        </div>
 
-                 <div class="form-group">
-                <%=form.label :contact_number, class:"mb-2 mt-2"%>
-                <%=form.text_field :contact_number, class:"form-control",required:true,placeholder:"Phone",type:"tel"%>
-                </div>
+                        <div class="form-group">
+                            <%=form.label :contact_number, class:"mb-2 mt-2"%>
+                                <%=form.text_field :contact_number,
+                                    class:"form-control",required:true,placeholder:"Phone",type:"tel"%>
+                        </div>
 
-                 <div class="form-group">
-                <%=form.label :total_number_of_tickets, class:"mb-2 mt-2"%>
-                <%=form.number_field :no_of_tickets, class:"form-control",required:true,placeholder:"No of tickets",type:"number",min:1,max:@webinar.remaining_spots,value:1%>
-                </div>
+                        <div class="form-group">
+                            <%=form.label :total_number_of_tickets, class:"mb-2 mt-2"%>
+                                <%=form.number_field :no_of_tickets, class:"form-control",required:true,placeholder:"No
+                                    of tickets",type:"number",min:1,max:@webinar.remaining_spots,value:1%>
+                        </div>
 
-                <h4 class="mt-4 mb-3">Card Details</h4>
-                <hr>
+                        <h4 class="mt-4 mb-3">Card Details</h4>
+                        <hr>
+                        <div class="form-group">
+                            <%=form.label :card_number, class:"mb-2 mt-2"%>
+                                <%=form.text_field :card_number, class:"form-control",required:true,placeholder:"Card number"%>
+                        </div>
+
+                        <div class="row">
+                            <div class="col-md-4">
+                                <div class="form-group">
+                                    <%=form.label :cvv, class:"mb-2 mt-2"%>
+                                        <%=form.text_field :cvv,
+                                            class:"form-control",required:true,placeholder:"Cvv",maxlength:3%>
+                                </div>
+                            </div>
+
+                             <div class="col-md-4">
+                                <div class="form-group">
+                                    <%=form.label :month, class:"mb-2 mt-2"%>
+                                        <%=form.text_field :exp_month,
+                                            class:"form-control",required:true,type:"number",value:1,placeholder:"mm",min:1,max:12,maxlength:2%>
+                                </div>
+                            </div>
+
+                             <div class="col-md-4">
+                                <div class="form-group">
+                                    <%=form.label :year, class:"mb-2 mt-2"%>
+                                        <%=form.text_field :exp_year,
+                                            class:"form-control",required:true,placeholder:"yyyy",type:"number",value:Date.current.year,maxlength:4, min:Date.current.year,max: (Date.current.year+4)%>
+                                </div>
+                            </div>
 
 
+                        </div>
 
-                <%end%>
+                        <div class="d-grid gap-2 mb-3">
+                        <%=form.submit "Book your spot", class:"btn btn-outline-dark btn-lg mt-3 mb-3"%>
+                        </div>
+
+                        <%end%>
             </div>
-    
+
         </div>
     </div>
 </div>
