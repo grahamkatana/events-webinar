@@ -5,8 +5,9 @@
     </div>
 
     <div class="card-body">
-      <h1>Your spot has been reserved, <%= @customer.full_name%>
-      </h1>
+    <p> Your order number is <%=@order_number%>,use it as a reference for queries</p>
+      <h3>Your spot has been reserved, <%= @customer.full_name%>
+      </h3>
       <p class="lead">
         Your booking for <strong>
           <%=@workshop.name%> has been confirmed. Please find the booking details below.

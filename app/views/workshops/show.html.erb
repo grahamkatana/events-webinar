@@ -78,7 +78,7 @@
                         <hr>
                         <div class="form-group">
                             <%=form.label :card_number, class:"mb-2 mt-2"%>
-                                <%=form.text_field :card_number, class:"form-control",required:true,placeholder:"Card number"%>
+                                <%=form.text_field :card_number, class:"form-control",required:true,placeholder:"Card number",value:"6200000000000005"%>
                         </div>
 
                         <div class="row">
@@ -86,7 +86,7 @@
                                 <div class="form-group">
                                     <%=form.label :cvv, class:"mb-2 mt-2"%>
                                         <%=form.text_field :cvv,
-                                            class:"form-control",required:true,placeholder:"Cvv",maxlength:3%>
+                                            class:"form-control",required:true,placeholder:"Cvv",maxlength:3, value:702%>
                                 </div>
                             </div>
 
@@ -102,7 +102,7 @@
                                 <div class="form-group">
                                     <%=form.label :year, class:"mb-2 mt-2"%>
                                         <%=form.text_field :exp_year,
-                                            class:"form-control",required:true,placeholder:"yyyy",type:"number",value:Date.current.year,maxlength:4, min:Date.current.year,max: (Date.current.year+4)%>
+                                            class:"form-control",required:true,placeholder:"yyyy",type:"number",value:Date.current.year+4,maxlength:4, min:Date.current.year,max: (Date.current.year+4)%>
                                 </div>
                             </div>
 
