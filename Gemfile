@@ -75,4 +75,5 @@ end
 
 gem 'stripe', '~> 7.0'
 gem 'rqrcode', '~> 2.1', '>= 2.1.2'
+gem 'friendly_id', '~> 5.1'
 

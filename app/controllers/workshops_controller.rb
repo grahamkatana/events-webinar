@@ -4,6 +4,6 @@ class WorkshopsController < ApplicationController
     end
 
     def show
-        @webinar = Workshop.find(params[:id])
+        @webinar = Workshop.friendly.find(params[:id])
     end
   end
