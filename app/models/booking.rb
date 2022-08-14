@@ -2,7 +2,7 @@ class Booking < ApplicationRecord
   belongs_to :customer
   belongs_to :workshop
 
-  before_create generate_order_number
+  before_create :generate_order_number
   
   validates :order_number,presence: true,uniqueness: true
   before_validation :generate_order_number
