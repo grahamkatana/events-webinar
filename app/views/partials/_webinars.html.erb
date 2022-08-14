@@ -3,9 +3,13 @@
         <% webinars.each do |webinar|%>
             <div class="col-lg-4">
                 <div class="card shadow mb-3 mt-2">
-                 <div class="bg-white card-header">
-                    <%=webinar.daily_hours%>
+                  <div class="bg-white card-header">
+                    <h5 class="text-dark">
+                   Duration <span class="badge bg-dark text-small"><%=webinar.daily_hours%></span>
+                    </h5>
                     </div>
+                 
+                <img class="card-img-top" src='<%="https://picsum.photos/1260/750?random=#{webinar.id}"%>' alt="" srcset="">
                     <div class="card-body">
                         <h4 class="card-title">
                             <%=truncate(webinar.name,length:25)%>
@@ -15,9 +19,13 @@
                         </p>
                         <h5><span class="badge bg-gray text-dark">From <%=webinar.start_date%> To <%=webinar.end_date%></span></h5>
                         <h5><span class="badge bg-dark text-white">Daily from <%=webinar.start_time%> To <%=webinar.end_time%></span></h5>
-                        <%= link_to 'More details', webinar,class:"btn btn-outline-primary btn-block"%>
+                        <%if webinar.is_upcoming_workshop?%>
+                        <%= link_to 'More details', webinar,class:"btn btn-outline-dark"%>
+                        <%end%>
+                        
                     </div>
                 </div>
+              
             </div>
             <%end%>
     </div>
