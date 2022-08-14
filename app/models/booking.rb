@@ -15,6 +15,6 @@ class Booking < ApplicationRecord
   end
 
   def update_workshop_spot_count
-    workshop.update(remaining_spots:workshop.total_spots.to_i-no_of_tickets.to_i)
+    workshop.update(remaining_spots:workshop.remaining_spots.to_i-no_of_tickets.to_i)
   end
 end

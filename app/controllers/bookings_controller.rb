@@ -19,6 +19,7 @@ class BookingsController < ApplicationController
             no_of_tickets:params[:no_of_tickets].to_i,
             amount:@amount_to_be_paid
         })
+        # @workshop.update(remaining_spots:@workshop.remaining_spots.to_i-params[:no_of_tickets].to_i)
         BookingsMailer.booking_confirmation(@booking).deliver_now
 
         redirect_to workshop_path(@workshop), notice:"Your spots have been reserved"
@@ -29,7 +30,7 @@ class BookingsController < ApplicationController
 
     def booking_details
         @booking = Booking.find(params[:id])
-        
+
 
     end
 
