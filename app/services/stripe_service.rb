@@ -1,7 +1,7 @@
 class StripeService
 
     def initialize()
-        Stripe.api_key="sk_test_51IZXryH8fqa06CtHsimPxKV8p54adv0T3Tc6pDqAMIpsY4oP3urWWlI3cepggVjt3QjWr47vmkOh6w3gy29h4Py800AO9nN08S"#ENV['STRIPE_SECRET_KEY']  
+        Stripe.api_key=#ENV['STRIPE_SECRET_KEY']  
     end
 
     def find_or_create_customer(customer)
