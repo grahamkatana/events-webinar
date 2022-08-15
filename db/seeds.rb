@@ -8,6 +8,8 @@
 
 puts "Seeding database................"
 
+admin = AdminUser.create(email:'admin@site.com',password:'password')
+
 
 webinars = Workshop.create([
     {
